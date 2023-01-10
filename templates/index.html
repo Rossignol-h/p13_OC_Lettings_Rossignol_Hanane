@@ -14,10 +14,11 @@
     <title>Holiday Homes</title>
 </head>
 
-<body>
-    <header id="header">
+<body class="index-body">
+    <header>
         <nav class="nav-container index-nav-container">
-            <img class="logo" src="{% static 'img/white-logo.svg' %}" alt="logo's company" />
+            <img class="logo" src="{% static 'img/logo.svg' %}" alt="logo's company" />
+            <h1>Holiday Homes</h1>
             <ul class="nav-item">
                 <li><a href="{% url 'home' %}">Home</a></li>
                 <li><a href="{% url 'profiles:index' %}">Profiles</a></li>
@@ -26,17 +27,8 @@
                 <img class="menu-icon" src="{% static 'img/home/menu.png' %}" alt="profile's image">
             </ul>
         </nav>
-        <main class="text-box">
-            <p>WELCOME TO</p>
-            <h1>HOLIDAY HOME</h1>
-            <h3>Book today for beautiful and luxurious vacations</h3>
-        </main>
-        <aside class="social-icons">
-            <a href=""></a><img src="{% static 'img/home/facebook.png' %}" alt="facebook's logo" />
-            <a href=""></a><img src="{% static 'img/home/twitter.png' %}" alt="twitter's logo" />
-            <a href=""></a><img src="{% static 'img/home/instagram.png' %}" alt="instagram's logo" />
-        </aside>
     </header>
+
     {% block content %}
     {% endblock %}
 </body>

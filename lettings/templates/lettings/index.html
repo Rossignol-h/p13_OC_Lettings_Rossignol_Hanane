@@ -1,17 +1,28 @@
 <title>Lettings</title>
-<h1>Lettings</h1>
-{% if lettings_list %}
-<ul>
+
+{% extends 'index.html' %}
+{% load static %}
+{% block content %}
+
+<main id="article_container">
+    <h1>Lettings</h1>
+    {% if lettings_list %}
     {% for letting in lettings_list %}
-    <li>
-        <a href="{% url 'lettings:letting' letting_id=letting.id %}">
-            {{ letting.title }}
-        </a>
-    </li>
+    <!-- CARD -->
+    <article class="card">
+        <header class="card-header">
+        </header>
+        <section class="card-content">
+            <h2>{{letting.title}}</h2>
+        </section>
+        <button type="button" class="card-button">
+            <a href="{% url 'lettings:letting' letting_id=letting.id %}">Detail
+            </a>
+        </button>
+    </article>
     {% endfor %}
-</ul>
-{% else %}
-<p>No lettings are available.</p>
-{% endif %}
-<div><a href="{% url 'home' %}">Home</a></div>
-<div><a href="{% url 'profiles:index' %}">Profiles</a></div>
+    {% else %}
+    <p>No lettings are available.</p>
+    {% endif %}
+</main>
+{% endblock content %}
