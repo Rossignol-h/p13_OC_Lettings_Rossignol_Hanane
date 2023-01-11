@@ -71,6 +71,7 @@ button {
 
 .logo {
     grid-column: 1 / 2;
+    height: 100px;
 }
 
 .nav-item a {
@@ -159,6 +160,7 @@ button {
 
 .logo {
     grid-column: 1 / 2;
+    height: 100px;
 }
 
 .nav-item a {

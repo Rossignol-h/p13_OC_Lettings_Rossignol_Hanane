@@ -9,6 +9,7 @@
     <article class="profile-card__detail">
         <div class="profile-card__overlay">
             <header class="profile-header__detail">
+                <img src="{{image.url}}">
                 <h2>{{profile.user.first_name|lower|capfirst}} {{profile.user.last_name|lower|capfirst}}</h2>
                 <p>Email: {{ profile.user.email }}</p>
                 <p>Favorite city: {{ profile.favorite_city }}</p>
