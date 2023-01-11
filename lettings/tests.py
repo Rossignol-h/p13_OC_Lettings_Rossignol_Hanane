@@ -1,7 +1,7 @@
 from django.urls import reverse
 import pytest
 
-from .models import Address, Letting
+from .models import Address, Letting, LettingsImage
 
 # ====================================================== TEST LETTING INDEX
 
@@ -29,9 +29,15 @@ def test_lettings_detail(client):
     )
     address.save()
 
+    image = LettingsImage(
+        image="villa.jpg"
+    )
+    image.save()
+
     letting = Letting(
         title="Hilton Garden Inn",
-        address=address
+        address=address,
+        image=image
     )
     letting.save()
     url = reverse("lettings:letting",  args=[1])

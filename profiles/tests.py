@@ -1,7 +1,7 @@
 import pytest
 from django.urls import reverse
 from django.contrib.auth.models import User
-from .models import Profile
+from .models import Profile, ProfileImage
 
 # ====================================================== TEST PROFILE INDEX
 
@@ -27,8 +27,11 @@ def test_profile_detail(client):
         email="w_smith@mib.com"
     )
     user.save()
-
-    profile = Profile(user=user, favorite_city="New York")
+    image = ProfileImage(
+        image="profile.jpg"
+    )
+    image.save()
+    profile = Profile(user=user, favorite_city="New York", image=image)
     profile.save()
 
     response = client.get(reverse('profiles:profile', args=["MIB"]))

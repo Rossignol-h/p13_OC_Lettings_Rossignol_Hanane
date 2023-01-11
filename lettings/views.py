@@ -49,6 +49,7 @@ def letting(request, letting_id):
     letting = Letting.objects.get(id=letting_id)
     context = {
         'title': letting.title,
-        'address': letting.address
+        'address': letting.address,
+        'image': letting.image.image,
     }
     return render(request, 'lettings/letting.html', context)

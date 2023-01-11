@@ -1,9 +1,20 @@
+{% extends 'index.html' %}
+{% load static %}
 <title>{{ profile.user.username }}</title>
+
+{% block content %}
 <h1>{{ profile.user.username }}</h1>
-<p>First name: {{ profile.user.first_name }}</p>
-<p>Last name: {{ profile.user.last_name }}</p>
-<p>Email: {{ profile.user.email }}</p>
-<p>Favorite city: {{ profile.favorite_city }}</p>
-<div><a href="{% url 'profiles:index' %}">Back</a></div>
-<div><a href="{% url 'home' %}">Home</a></div>
-<div><a href="{% url 'lettings:index' %}">Lettings</a></div>
+<main id="profile-container">
+    <!-- CARD -->
+    <article class="profile-card__detail">
+        <div class="profile-card__overlay">
+            <header class="profile-header__detail">
+                <img src="{{image.url}}">
+                <h2>{{profile.user.first_name|lower|capfirst}} {{profile.user.last_name|lower|capfirst}}</h2>
+                <p>Email: {{ profile.user.email }}</p>
+                <p>Favorite city: {{ profile.favorite_city }}</p>
+            </header>
+        </div>
+    </article>
+</main>
+{% endblock content %}
